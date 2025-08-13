@@ -17,6 +17,7 @@ error_log("Cleaned URI: " . $uri);
 $routes = [
     '/branchMaster' => __DIR__ . '/branchRoutes.php',
     '/deptMaster'=> __DIR__ . '/departmentRoutes.php',
+    '/designationMaster' =>__DIR__ . '/designationRoutes.php',
 ];
 
 if (isset($routes[$uri])) {

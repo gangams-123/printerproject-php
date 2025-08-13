@@ -1,18 +1,18 @@
 <?php
 require_once 'cors.php';
-require_once __DIR__ . '/../controllers/departmentController.php';
+require_once __DIR__ . '/../controllers/designationController.php';
 
-$controller = new DepartmentController();
+$controller = new DesignationController();
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'POST':
-        $controller->createDepartment();
+        $controller->createDesignation();
         break;
     case 'GET':
-        $controller->getAllDepartments();
+        $controller->getAllDesignations();
         break;
     case 'DELETE':
-        $controller->deleteDept();
+        $controller->deleteDesignation();
         break;    
     default:
         http_response_code(405);

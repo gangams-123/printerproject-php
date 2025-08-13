@@ -25,5 +25,15 @@ class Departmentodel {
                  $dept[] = $row;
         return $dept; 
     }
-}
+     public function deleteDept($conn,$id){
+        $sql = "DELETE FROM department WHERE id = $id";
+        error_log("sql department delete " . $sql);
+        $res = mysqli_query($conn, $sql);
+        if (!$res) {
+            error_log("Delete error: " . mysqli_error($conn));
+            return false;
+        }
+        return mysqli_affected_rows($conn);
+    }
+}    
 ?>
